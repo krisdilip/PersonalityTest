@@ -1,0 +1,48 @@
+ion-content {
+	//background-color:#009688;
+	background: url('../img/image3.jpg') repeat center;
+}
+
+.color1 {
+	background-color: #1DE9B6;
+	color:black;
+	text-align:center;
+}
+
+.color2 {
+	background-color: #FFEA00;
+	color:black;
+	text-align:center;
+}
+
+.color3 {
+	background-color: #00E5FF;
+	color:black;
+	text-align:center;
+}
+
+.color4 {
+	background-color: #EA80FC;
+	color:black;
+	text-align:center;
+}
+
+.item-radio input:checked ~ .item-content  {
+	background-color: #BDBDBD ;
+	//color: red;
+	//border-color: #AB47BC !important;
+}
+
+.item-radio .item-content  {
+	background-color: #F5F5F5;
+	//color: red;
+	border-color: #AB47BC !important;
+}
+
+ion-pane .item {
+	border-color: white;
+}
+
+ion-content .item {
+	border-color: lightgrey;
+}

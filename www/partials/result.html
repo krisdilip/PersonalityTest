@@ -1,0 +1,68 @@
+<!-- Personality Test Results -->
+<ion-content>				
+	<div class="list card">
+	
+		<div class="item item-avatar item-text-wrap">
+			<img src="./img/icon.jpg" height="1000">
+			<h2>Your Myers-Briggs result show these dominant preferences</h2>
+		</div>
+		
+		<div class="item-body item-text-wrap">
+		
+			<div class="row">
+				<div class="col item item-text-wrap color1">{{data.code[0].type}}</div>
+				<div class="col item item-text-wrap color2">{{data.code[1].type}}</div>
+				<div class="col item item-text-wrap color3">{{data.code[2].type}}</div>
+				<div class="col item item-text-wrap color4">{{data.code[3].type}}</div>
+			</div>
+			<div class="row">
+				<div class="col item item-text-wrap color1">{{data.code[0].percent}} %</div>
+				<div class="col item item-text-wrap color2">{{data.code[1].percent}} %</div>
+				<div class="col item item-text-wrap color3">{{data.code[2].percent}} %</div>
+				<div class="col item item-text-wrap color4">{{data.code[3].percent}} %</div>
+			</div>
+			
+			<center>
+				<div class="col item item-text-wrap"> <img ng-src="{{data.PersonalityDetails.imgSrc}}" width="200px" height="200px"> </div> 			
+			</center>
+			
+			<center>
+				<div class="col item item-text-wrap"> <font color="#9C27B0"> {{data.PersonalityDetails.desc1}}</div>
+			</center>
+			
+			<p class="item">	
+				<font size="3" face="verdana" color="">
+				You are  <font color="#9C27B0">{{data.PersonalityDetails.desc2}}</font> by nature.
+				<br><br>
+				{{ data.PersonalityDetails.poppercent}} has your Temperament
+			</p>
+			
+			<p class="item">	
+				<font size="3" face="verdana" color="">
+				{{ data.PersonalityDetails.desc3}}
+			</p>
+			
+			<div class="item">
+			<p>
+				<font size="3" face="verdana" color="">
+				<i class="icon ion-information"></i> &nbsp {{data.code[0].description}}
+			</p>
+			
+			<p>
+				<font size="3" face="verdana" color="">
+				<i class="icon ion-information"></i> &nbsp {{data.code[1].description}}
+			</p>
+		
+			<p>
+				<font size="3" face="verdana" color="">
+				<i class="icon ion-information"></i> &nbsp {{data.code[2].description}}
+			</p>
+				
+			<p>
+				<font size="3" face="verdana" color="">
+				<i class="icon ion-information"></i> &nbsp {{data.code[3].description}}
+			</p>
+			</div>
+		</div>
+	</div>
+</ion-content>
