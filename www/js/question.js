@@ -20,7 +20,8 @@ var PersonalityDetails = [
 		match1desc:"Crafter",
 		match2desc:"Architect",
 		poppercent:"40% to 45% of population",
-		imgSrc:"./img/estj.png"
+		imgSrc:"./img/estj.png",
+		famous:"Famous ESTJs include Henry Ford, Hillary Clinton, Michelle Obama, Saddam Hussein, Uma Thurman, Emma Watson and Alec Baldwin"
 	},
 	{
 		type:"ISTJ",
@@ -32,7 +33,8 @@ var PersonalityDetails = [
 		match1desc:"Performer",
 		match2desc:"Promoter",
 		poppercent:"40% to 45% of population",
-		imgSrc:"./img/istj.png"
+		imgSrc:"./img/istj.png",
+		famous:"Famous ISTJs include Elizabeth II, George Washington, Warren Buffett, Jeff Bezos, Richard Nixon, Calvin Coolidge, Robert De Niro and Natalie Portman"
 	},
 	{
 		type:"ESFJ",
@@ -44,7 +46,8 @@ var PersonalityDetails = [
 		match1desc:"Composer",
 		match2desc:"Healer",
 		poppercent:"40% to 45% of population",
-		imgSrc:"./img/esfj.png"
+		imgSrc:"./img/esfj.png",
+		famous:"Famous ISTJs include Harry S. Truman, Gerald Ford, Colin Powell, Sam Walton, Larry King, Sarah Jessica Parker, Celine Dion, Hugh Jackman and Prince William"
 	},
 	{
 		type:"ISFJ",
@@ -56,7 +59,8 @@ var PersonalityDetails = [
 		match1desc:"Promoter",
 		match2desc:"Performer",
 		poppercent:"40% to 45% of population",
-		imgSrc:"./img/isfj.png"
+		imgSrc:"./img/isfj.png",
+		famous:"Famous ISTJs include Jimmy Carter, George H.W. Bush, Mother Teresa, Anthony Hopkins, Bruce Willis, Halle Berry, Kim Kardashian and Prince Charles"
 	},
 	{
 		type:"ESTP",
@@ -68,7 +72,8 @@ var PersonalityDetails = [
 		match1desc:"Protector",
 		match2desc:"Inspector",
 		poppercent:"30% to 35% of population",
-		imgSrc:"./img/estp.png"
+		imgSrc:"./img/estp.png",
+		famous:"Famous ISTJs include Alexander the Great, Winston Churchill, Theodore Roosevelt, Franklin D. Roosevelt, Arthur Conan Doyle, George W. Bush, Alfred Hitchcock, Madonna and Angelina Jolie"
 	},
 	{
 	type:"ISTP",
@@ -80,7 +85,8 @@ var PersonalityDetails = [
 		match1desc:"Supervisor",
 		match2desc:"Fieldmarshal",
 		poppercent:"30% to 35% of population",
-		imgSrc:"./img/istp.png"
+		imgSrc:"./img/istp.png",
+		famous:"Famous ISTJs include Steve Jobs, Dalai Lama XIV, Vladimir Putin, Clint Eastwood, Harrison Ford, Tom Cruise, Demi Moore, David Blaine and Bruce Lee"
 	},
 	{
 		type:"ESFP",
@@ -92,7 +98,8 @@ var PersonalityDetails = [
 		match1desc:"Inspector",
 		match2desc:"Protector",
 		poppercent:"30% to 35% of population",
-		imgSrc:"./img/esfp.png"
+		imgSrc:"./img/esfp.png",
+		famous:"Famous ISTJs include Bill Clinton, John F. Kennedy, Ronald Reagan, Larry Ellison, Hugh Hefner, Steven Spielberg, Justin Bieber, Leonardo DiCaprio, Mel Gibson and Katy Perry"
 	},
 	{
 		type:"ISFP",
@@ -104,7 +111,8 @@ var PersonalityDetails = [
 		match1desc:"Provider",
 		match2desc:"Teacher",
 		poppercent:"30% to 35% of population",
-		imgSrc:"./img/isfp.png"
+		imgSrc:"./img/isfp.png",
+		famous:"Famous ISTJs include Princess Diana, Ulysses S. Grant, Michael Jackson, Paul McCartney, Paris Hilton, David Beckham, Justin Timberlake, Brad Pitt, Marilyn Monroe and Prince Harry"
 	},
 	{
 		type:"ENFJ",
@@ -116,19 +124,21 @@ var PersonalityDetails = [
 		match1desc:"Healer",
 		match2desc:"Composer",
 		poppercent:"15% to 20% of population",
-		imgSrc:"./img/enfj.png"
+		imgSrc:"./img/enfj.png",
+		famous:"Famous ISTJs include Martin Luther King, Jr, Nelson Mandela, Mikhail Gorbachev, Tony Blair, Yasser Arafat, Oprah Winfrey, Morgan Freeman, Emma Stone and Charlie Rose"
 	},
 	{
 		type:"INFJ",
-		desc1:"Counselor",
+		desc1:"Counsellor",
 		desc2:"an Idealist",
-		desc3:"Quietly forceful, original, and sensitive. Tend to stick to things until you are done. Extremely intuitive about people, and concerned for their feelings. Well-developed value systems which you strictly adhere to. Well-respected for your perserverence in doing the right thing. Likely to be individualistic, rather than leading or following.",
+		desc3:"Quietly forceful, original, and sensitive. Tend to stick to things until you are done. Extremely intuitive about people, and concerned for their feelings. Well-developed value systems which you strictly adhere to. Well-respected for your perseverance in doing the right thing. Likely to be individualistic, rather than leading or following.",
 		match1:"ENTP",
 		match2:"ENFP",
 		match1desc:"Inventor",
 		match2desc:"Champion",
 		poppercent:"15% to 20% of population",
-		imgSrc:"./img/infj.png"
+		imgSrc:"./img/infj.png",
+		famous:"Famous ISTJs include Mahatma Gandhi, Niels Bohr, Carl Gustav Jung, Thomas Jefferson, Agatha Christie, Adolf Hitler, Al Pacino, and Leo Tolstoy"
 	},
 	{
 		type:"ENFP",
@@ -138,9 +148,10 @@ var PersonalityDetails = [
 		match1:"INTJ",
 		match2:"INFJ",
 		match1desc:"Mastermind",
-		match2desc:"Counselor",
+		match2desc:"Counsellor",
 		poppercent:"15% to 20% of population",
-		imgSrc:"./img/enfp.png"
+		imgSrc:"./img/enfp.png",
+		famous:"Famous ISTJs include Walt Disney, Salman Rushdie, Anne Frank, Osho, Che Guevara, Robin Williams, Jennifer Aniston and Sandra Bullock"
 	},
 	{
 		type:"INFP",
@@ -152,7 +163,8 @@ var PersonalityDetails = [
 		match1desc:"Teacher",
 		match2desc:"Provider",
 		poppercent:"15% to 20% of population",
-		imgSrc:"./img/infp.png"
+		imgSrc:"./img/infp.png",
+		famous:"Famous ISTJs include John Kerry, Virginia Woolf,J.K. Rowling, William Shakespeare, Nicolas Cage, Johnny Depp and Jude Law"
 	},
 	{
 		type:"ENTJ",
@@ -164,7 +176,8 @@ var PersonalityDetails = [
 		match1desc:"Architect",
 		match2desc:"Crafter",
 		poppercent:"5% to 10% of population",
-		imgSrc:"./img/entj.png"
+		imgSrc:"./img/entj.png",
+		famous:"Famous ISTJs include Napoleon Bonaparte, Julius Caesar, Margaret Thatcher, Aristotle, Bill Gates, Garry Kasparov, Joseph Stalin, George Clooney, Charlize Theron and Adele"
 	},
 	{
 	type:"INTJ",
@@ -176,7 +189,8 @@ var PersonalityDetails = [
 		match1desc:"Champion",
 		match2desc:"Inventor",
 		poppercent:"5% to 10% of population",
-		imgSrc:"./img/intj.png"
+		imgSrc:"./img/intj.png",
+		famous:"Famous ISTJs include Isaac Newton, Karl Marx, Mark Zuckerberg, Bobby Fischer, Nikola Tesla, Stephen Hawking, John Nash, Vladimir Lenin, Arnold Schwarzenegger and Jodie Foster"
 	},
 	{
 		type:"ENTP",
@@ -188,7 +202,8 @@ var PersonalityDetails = [
 		match1desc:"Counselor",
 		match2desc:"Mastermind",
 		poppercent:"5% to 10% of population",
-		imgSrc:"./img/entp.png"
+		imgSrc:"./img/entp.png",
+		famous:"Famous ISTJs include Socrates, Leonardo da Vinci, Benjamin Franklin, Steve Wozniak, Barack Obama, Robert Downey Jr, Salma Hayek and Karl Lagerfeld"
 	},
 	{
 		type:"INTP",
@@ -200,7 +215,8 @@ var PersonalityDetails = [
 		match1desc:"Fieldmarshal",
 		match2desc:"Supervisor",
 		poppercent:"5% to 10% of population",
-		imgSrc:"./img/intp.png"
+		imgSrc:"./img/intp.png",
+		famous:"Famous ISTJs include Abraham Lincoln, Albert Einstein, Charles Darwin, Marie Curie, Larry Page, Sergey Brin, David Cronenberg, Paul Allen and Jimmy Wales"
 	}
 ];
 

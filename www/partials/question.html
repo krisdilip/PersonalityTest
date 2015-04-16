@@ -1,49 +1,40 @@
 <!-- Personality Test Questions -->
-<ion-pane>				
-		
-
-		<div class="item item-text-wrap">
-			<center>
-				<img ng-src="./img/bg1.png" width="300px" height="150px">
-			</center>
-			
-			<br>
-			<br>
-			
+<ion-content>
+		<!--
+		<div class="item item-avatar">
+			<img src="./img/icon.jpg">
+			<h2>Question {{data.currQuestion}} of {{data.totQuestions}}</p>
+		</div>
+		-->
+	
+		<div class="item-body">
+			<img class="full-image" src="./img/bg1.png" height="{{height}}">
 			<h2>
 				<font size="3" color="black">
 				<i class="icon ion-help-circled"></i> &nbsp
 				{{data.testQuestion.question}}
 			</h2>
-		</div>
-		
-		<div><div>
-		
-		<div class="item item-text-wrap">
-		
+					
 			<ion-radio 	name={{$parent.$index}}
 						ng-model="data.testQuestion.answer"
 						ng-repeat="ans in data.testQuestion.answers" 
 						ng-value="$index" 
 						icon="ion-checkmark-circled" 
 						ng-change="fnNextQuestion()">
-					<div class="item-text-wrap padding-left">
-						<font size="3" face="verdana">{{ ans }}
+					<div class="item-text-wrap">
+						{{ ans }}
 					</div>
 			</ion-radio>
-
 		</div>
-		
-		<div class="bar-footer">
-			<div class="tabs-icon-left">
-				<div class="tabs">
-					<div class="item tabs tabs-icon-left">		
-						<a class="tab-item" ng-click="fnPrevious()"><i class="icon ion-reply"></i>Previous</a>
-						<a class="tab-item"><i class="icon ion-navicon"></i> Question {{data.currQuestion}} of {{data.totQuestions}}</a>
-						<a class="tab-item" ng-click="fnNext()"><i class="icon ion-forward"></i>Next</a>
-					</div>
-				</div>	
-			</div>
-		</div>	
-
-</ion-pane>
+		<!--
+		<div class="item tabs tabs-secondary tabs-icon-left">
+			<a class="tab-item" ng-click="fnPrevious()"><i class="icon ion-reply"></i>Previous</a>
+			<a class="tab-item" ng-click="fnNext()"><i class="icon ion-forward"></i>Next</a>
+		</div>
+		-->
+</ion-content>
+<ion-footer-bar align-title="left" class="bar-positive">
+	<button class="button button-icon icon ion-reply" ng-click="fnPrevious()"></button>
+	<h1 class="title">Question {{data.currQuestion}} of {{data.totQuestions}}</h1>
+	<button class="button button-icon icon ion-forward" ng-click="fnNext()"></button>
+</ion-footer-bar>

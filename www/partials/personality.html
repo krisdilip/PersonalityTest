@@ -1,0 +1,58 @@
+<!-- Personality Test Results -->
+<ion-content>	
+	<div class="list card">
+		<div class="item item-avatar item-text-wrap">
+			<img src="./img/icon.jpg">
+			<h2>Personality Types</h2>
+			<p>Sixteen types of individuals</p>
+		</div>
+		
+		<div class="item item-body">
+			According to Carl G. Jung's theory of psychological types [Jung, 1971], people can be characterized by their preference of general attitude:
+			<div class="row">
+				<div class="col item item-text-wrap color1">Extraverted (E)</div>
+				<div class="col item item-text-wrap color2">Introverted (I)</div>
+			</div>
+			their preference of one of the two functions of perception: <br>
+			<div class="row">
+				<div class="col item item-text-wrap color2">Sensing (S)</div>
+				<div class="col item item-text-wrap color3">Intuition (N)</div>
+			</div>,
+			and their preference of one of the two functions of judging: <br>
+			<div class="row">
+				<div class="col item item-text-wrap color3">Thinking (T)</div>
+				<div class="col item item-text-wrap color4">Feeling (F)</div>
+			</div>
+			The three areas of preferences introduced by Jung are dichotomies (i.e. bipolar dimensions where each pole represents a different preference). Jung also proposed that in a person one of the four functions above is dominant – either a function of perception or a function of judging. Isabel Briggs Myers, a researcher and practitioner of Jung’s theory, proposed to see the judging-perceiving relationship as a fourth dichotomy influencing personality type <br>
+			<div class="row">
+				<div class="col item item-text-wrap color2">Judging (J)</div>
+				<div class="col item item-text-wrap color1">Perceiving (P)</div>
+			</div>
+			All possible permutations of preferences in the 4 dichotomies above yield 16 different combinations, or personality types, representing which of the two poles in each of the four dichotomies dominates in a person, thus defining 16 different personality types. Each personality type can be assigned a 4 letter acronym of corresponding combination of preferences:
+		</div>
+	</div>
+		
+	<div class="list card" ng-repeat="p in PersonalityDetails">
+		<div class="item item-avatar item-text-wrap">
+			<img ng-src="{{p.imgSrc}}">
+			<h2>{{p.type}}</h2>
+			<p>{{p.desc1}}</p>
+		</div>
+		
+		<div class="item item-body">{{p.desc3}}</div>
+		<div class="item item-body">{{p.famous}}</div>
+		<div class="item item-body">Matches are {{p.match1}} and {{p.match2}}</div>
+	</div>
+</ion-content>
+<div class="tabs-striped tabs-background-positive">
+ 	<div class="tabs tabs-icon-top tabs-color-light">
+	  <a class="tab-item active">
+		<i class="icon ion-ios-compose-outline" ng-click="fnNewTest()"></i>
+		Start Test
+	  </a>
+	  <a class="tab-item active">
+		<i class="icon ion-ios-bookmarks-outline" ng-click="fnLoad()"></i>
+		Show Saved Result
+	  </a>
+	</div>
+</div>  

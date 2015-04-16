@@ -1,6 +1,6 @@
 ion-content {
 	//background-color:#009688;
-	background: url('../img/image3.jpg') repeat center;
+	//background: url('../img/image3.jpg') repeat center;
 }
 
 .color1 {
@@ -31,12 +31,14 @@ ion-content {
 	background-color: #BDBDBD ;
 	//color: red;
 	//border-color: #AB47BC !important;
+	//background: url('../img/image3.jpg') repeat center;
 }
 
 .item-radio .item-content  {
 	background-color: #F5F5F5;
 	//color: red;
 	border-color: #AB47BC !important;
+	//background: url('../img/image3.jpg') repeat center;
 }
 
 ion-pane .item {
@@ -45,4 +47,8 @@ ion-pane .item {
 
 ion-content .item {
 	border-color: lightgrey;
+}
+
+ion-content .item-body{
+	//background-color: red;
 }

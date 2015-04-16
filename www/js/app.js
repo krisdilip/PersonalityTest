@@ -20,9 +20,14 @@ app.run(function($ionicPlatform) {
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/0');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider	
+		.state('/personality', {
+            url:'/personality',
+            templateUrl: 'partials/personality.html',
+            controller: 'PersonalityCtrl'
+        })	
 		.state('/result', {
             url:'/result',
             templateUrl: 'partials/result.html',
@@ -30,8 +35,8 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         })	
         .state('/', {
             url: '/',
-            templateUrl: 'partials/question.html',
-			controller: 'TestCtrl'
+            templateUrl: 'partials/personality.html',
+			controller: 'PersonalityCtrl'
         })
 		.state('/:questionIndex', {
             url:'/:questionIndex',
@@ -42,7 +47,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 }]);
 
 app.controller('IndexCtrl', function($scope, $state, $rootScope, $ionicPopup){
-	
 	$scope.data={};
 	
 	$rootScope.personality = [0,0,0,0,0,0,0];
@@ -50,10 +54,22 @@ app.controller('IndexCtrl', function($scope, $state, $rootScope, $ionicPopup){
 	//Load question from external JS
 	$rootScope.questions = QuestionData; 
 
-	$scope.data.testQuestion=QuestionData[0];
+	$scope.data.testQuestion = QuestionData[0];
+	
+	$scope.fnPersonality = function(){
+		$state.go("/personality");
+	};
+	
+	$scope.fnTest = function(){
+		if(isNaN($rootScope.currQuestionIndex)) {
+			$state.go("/:questionIndex", {questionIndex:0});
+		}else {
+			$state.go("/:questionIndex", {questionIndex:$rootScope.currQuestionIndex});
+		}		
+	};
 });
 
-app.controller('ResultCtrl', function($scope, $state, $rootScope, $ionicPopup){
+app.controller('ResultCtrl', function($scope, $state, $rootScope, $ionicPopup, $window){
 	
 	$scope.showAlert = function(msg) {
 		var alertPopup = $ionicPopup.alert({
@@ -65,12 +81,14 @@ app.controller('ResultCtrl', function($scope, $state, $rootScope, $ionicPopup){
 	//[E I S N T F J P]
 	var testResult = [0,0,0,0,0,0,0,0];
 	var testResPercent = [0,0,0,0,0,0,0,0];
-	
+	var localStorage = [];
+		
 	for(i=0; i < $rootScope.questions.length; i++){
 		if($rootScope.questions[i].answer < 0){
 			//$scope.showAlert("Please answer all the questions ...!");
 			break;
 		}else{
+			localStorage[i] = $rootScope.questions[i].answer;
 			testResult[parseInt($rootScope.questions[i].id) + parseInt($rootScope.questions[i].answer)] += 1;
 		};
 	};
@@ -126,12 +144,14 @@ app.controller('ResultCtrl', function($scope, $state, $rootScope, $ionicPopup){
 		};
 	};
 	
+	$scope.fnSave = function () {
+		$window.localStorage['MyKey'] = JSON.stringify(localStorage);
+		$scope.showAlert("Your Myers-Briggs result saved ...!");
+	}
+	
 });
 
 app.controller('TestCtrl', function($scope, $state, $rootScope, $ionicPopup, $stateParams){
-	
-	//var imgIndex=0;
-	//var imgArray = ['./img/bg1.png', './img/bg2.png', './img/bg3.jpg', './img/bg4.gif', './img/bg5.png'];
 	
 	$scope.showAlert = function(msg) {
 		var alertPopup = $ionicPopup.alert({
@@ -144,22 +164,9 @@ app.controller('TestCtrl', function($scope, $state, $rootScope, $ionicPopup, $st
 	$scope.data.totQuestions = QuestionData.length;
 	$scope.data.currQuestion = (parseInt($stateParams.questionIndex) + 1);
 	
-	/*
-	try{
-		imgIndex = Math.floor(Math.random() * ((15-0)+1) + 0);
-	}catch(exception){
-		imgIndex = 0;
-	};
-	
-	if(imgIndex >=0 || imgIndex <=15){
-		$scope.data.imageSrc = PersonalityDetails[imgIndex].imgSrc;
-	}else{
-		$scope.data.imageSrc = "./img/entp.png";
-	};
-	*/
-	
 	$scope.fnNextQuestion = function(){
 		if((parseInt($stateParams.questionIndex) + 1) < $rootScope.questions.length){
+			$rootScope.currQuestionIndex = (parseInt($stateParams.questionIndex) + 1);
 			$state.go("/:questionIndex", {questionIndex: (parseInt($stateParams.questionIndex) + 1)});    
 		}else{
 			$state.go("/result");
@@ -168,6 +175,7 @@ app.controller('TestCtrl', function($scope, $state, $rootScope, $ionicPopup, $st
 	
 	$scope.fnPrevious = function(){
 		if((parseInt($stateParams.questionIndex) - 1) >= 0){
+			$rootScope.currQuestionIndex = (parseInt($stateParams.questionIndex) - 1);
 			$state.go("/:questionIndex", {questionIndex: (parseInt($stateParams.questionIndex) - 1)});    
 		};
     };
@@ -175,14 +183,79 @@ app.controller('TestCtrl', function($scope, $state, $rootScope, $ionicPopup, $st
 	$scope.fnNext = function(){
 		if($scope.data.testQuestion.answer === -1){
 			$scope.showAlert("Please answer the question ...!");
-			exit;
+			return;
 		};
 				
 		if((parseInt($stateParams.questionIndex) + 1) < $rootScope.questions.length){
+			$rootScope.currQuestionIndex = (parseInt($stateParams.questionIndex) + 1);
 			$state.go("/:questionIndex", {questionIndex: (parseInt($stateParams.questionIndex) + 1)});    
 		}else{
 			$state.go("/result");
 		};
     };
+	
+	$scope.height = parseInt((document.getElementsByTagName('ion-content')[0].clientHeight) * 25/100);
+	$scope.width = parseInt((document.getElementsByTagName('ion-content')[0].clientWidth) * 50/100);
+
+});
+
+app.controller('PersonalityCtrl', function($scope, $state, $rootScope, $stateParams, $window, $ionicPopup){
+	$scope.PersonalityDetails = PersonalityDetails;
+	
+	$scope.showAlert = function(msg) {
+		var alertPopup = $ionicPopup.alert({
+			title: 'Quiz',
+			template: msg
+		});
+	};
+	
+	$scope.fnTest = function (){
+		if(isNaN($rootScope.currQuestionIndex)) {
+			// If there is no test active then clean the answers and start fresh
+			// This is required in case old test results are loaded to review old results
+			for(i=0; i < $rootScope.questions.length; i++){
+				$rootScope.questions[i].answer = -1;
+			};
+			
+			// Now go to the first question
+			$state.go("/:questionIndex", {questionIndex:0});
+		}else {
+			
+			// If there is a test active then clean the answers forward from last answered index
+			// This is required in case old test results are loaded to review old results in the // middle of a new test
+			for(i=$rootScope.currQuestionIndex; i < $rootScope.questions.length; i++){
+				$rootScope.questions[i].answer = -1;
+			};
+			
+			$state.go("/:questionIndex", {questionIndex:$rootScope.currQuestionIndex});
+		}
+	};
+	
+	$scope.fnNewTest = function (){
+		// Clear all answers and start fresh.
+		for(i=0; i < $rootScope.questions.length; i++){
+			$rootScope.questions[i].answer = -1;
+		};
 		
+		//Set the current question index of the ongoing test to 0
+		$rootScope.currQuestionIndex = 0;
+		
+		// Now go to the first question
+		$state.go("/:questionIndex", {questionIndex:0});	
+	};
+	
+	$scope.fnSave = function (){
+		$window.localStorage['MyKey'] = 'Hello World';
+	};
+	
+	$scope.fnLoad = function (){
+		// Try to load an old test result which is stored in the localStorage
+		var localStorage = JSON.parse($window.localStorage['MyKey']);
+		
+		for(i=0; i < $rootScope.questions.length; i++){
+			$rootScope.questions[i].answer = localStorage[i];
+		};
+		
+		$state.go("/result");
+	};
 });
