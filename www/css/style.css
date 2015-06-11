@@ -1,6 +1,6 @@
 ion-content {
 	//background-color:#009688;
-	//background: url('../img/image3.jpg') repeat center;
+	//background: url('../img/sVyVz.png') repeat center;
 }
 
 .color1 {
@@ -31,7 +31,7 @@ ion-content {
 	background-color: #BDBDBD ;
 	//color: red;
 	//border-color: #AB47BC !important;
-	//background: url('../img/image3.jpg') repeat center;
+	//background: url('../img/sVyVz.png') repeat center;
 }
 
 .item-radio .item-content  {
@@ -43,6 +43,7 @@ ion-content {
 
 ion-pane .item {
 	border-color: white;
+	
 }
 
 ion-content .item {
